@@ -54,8 +54,10 @@ def get_student(student_id):
 
 @app.route("/api/students", methods=["POST"])
 def add_student():
-    data = request.get_json()
+    data = request.get_json(silent=True)
 
+    if data is None:
+        return jsonify({"error": "Invalid JSON"}), 400
     required = ["mssv", "ho_ten", "lop", "diem"]
 
     if not data or any(field not in data for field in required):
