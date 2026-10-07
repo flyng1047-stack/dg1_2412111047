@@ -52,7 +52,6 @@ def get_student(student_id):
 
     return jsonify({"error": "Student not found"}), 404
 
-
 @app.route("/api/students", methods=["POST"])
 def add_student():
     data = request.get_json()
@@ -62,6 +61,8 @@ def add_student():
     if not data or any(field not in data for field in required):
         return jsonify({"error": "Missing required fields"}), 400
 
+    if any(str(data[field]).strip() == "" for field in ["mssv", "ho_ten", "lop"]):
+        return jsonify({"error": "Fields must not be empty"}), 400
     try:
         diem = float(data["diem"])
     except (ValueError, TypeError):
