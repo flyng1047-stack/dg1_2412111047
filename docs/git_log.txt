@@ -1,0 +1,21 @@
+*   6a5539e (HEAD -> main, tag: v1.0.0, origin/main, origin/develop, origin/HEAD, develop) merge: resolve README conflict between main and develop
+|\  
+| * 135f8c9 docs: add project overview to main
+* | 412cd5b docs: document application and Docker deployment
+* |   b135052 (feature/docker) Merge pull request #3 from flyng1047-stack/feature/docker
+|\ \  
+| * | d5bf13d (origin/feature/docker) feat: add Docker Compose and Nginx deployment
+| * | deb47fd feat: prepare web app for Docker
+| |/  
+* |   cc841bb Merge pull request #2 from flyng1047-stack/feature/web-app
+|\ \  
+| |/  
+|/|   
+| * dec3fc9 (origin/feature/web-app, feature/web-app) chore: update student data
+| * 2b156a0 fix: handle invalid json input
+| * bba663f docs: add web api documentation
+| * ff5b505 fix: validate empty student fields
+| * 4faafca feat: add student creation api
+| * 0bbc9da feat: add student web app and api
+|/  
+* 795cdd4 chore: init project
