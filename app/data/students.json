@@ -33,5 +33,12 @@
     "ho_ten": "Hoang Van Em",
     "lop": "8A",
     "diem": 6.5
+  },
+  {
+    "id": 6,
+    "mssv": "SV006",
+    "ho_ten": "Nguyen Van Phuc",
+    "lop": "9C",
+    "diem": 8.8
   }
 ]

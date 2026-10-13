@@ -1,0 +1,44 @@
+=== C3.1: POST thiếu trường ===
+
+$ curl -i -X POST http://localhost:5000/api/students \
+-H "Content-Type: application/json" \
+-d '{"mssv":"SV006","ho_ten":"Test"}'
+
+Kết quả:
+HTTP/1.1 400 BAD REQUEST
+
+{
+  "error": "Missing required fields"
+}
+
+
+=== C3.2: POST điểm ngoài khoảng 0-10 ===
+
+$ curl -i -X POST http://localhost:5000/api/students \
+-H "Content-Type: application/json" \
+-d '{"mssv":"SV006","ho_ten":"Test","lop":"12A","diem":11}'
+
+Kết quả:
+HTTP/1.1 400 BAD REQUEST
+
+{
+  "error": "Score must be between 0 and 10"
+}
+
+
+=== C3.3: POST hợp lệ ===
+
+$ curl -i -X POST http://localhost:5000/api/students \
+-H "Content-Type: application/json" \
+-d '{"mssv":"SV006","ho_ten":"Nguyen Van Phuc","lop":"9C","diem":8.8}'
+
+Kết quả:
+HTTP/1.1 201 CREATED
+
+{
+  "id": 6,
+  "mssv": "SV006",
+  "ho_ten": "Nguyen Van Phuc",
+  "lop": "9C",
+  "diem": 8.8
+}
